@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color : #000033;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 30px;
+        }
+        h2 {
+            font-size: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        label {
+            font-size: 30px;
+        }
+        button {
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+        input {
+            width: 300px;
+            height: 20px;
+            border-radius: 12px;
+            padding: 5px;
+        }
+        textarea {
+            border-radius: 12px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Create Note</h2>
+        <form action="/notes" method="POST">
+            <label for="titleInput">Title</label>
+            <input type="text" id="titleInput" name="title">
+            <label for="contentsInput">Content</label>
+            <textarea name="content" id="contentsInput" cols="60" rows="10"></textarea>
+            <button type="submit">Create Note</button>
+        </form>
+    </div>
+</body>
+</html>

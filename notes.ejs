@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="searchBar">
+            <form action="/notes" method="GET">
+                <label for="searchInput">Search Note</label>
+                <input type="text" name="search" id="searchInput">
+                <button>Search</button>
+            </form>
+        </div>
+
+        <% var check=false;%>
+        <% for(var i = 0; i < notes.length; i++){ %>
+            <div class="box">
+                <h2> <%= notes[i].title %> </h2>
+                <p> <%= notes[i].content %> </p>
+                <a href="/notes/<%= notes[i].id %>">Open Note</a>
+                <% check=true %>
+            </div>
+        <% } %>
+        <% if(check==false){ %>
+            <div class="box">
+                <p>No Notes to show. Please create a new note!</p>
+            </div>
+        <% } %>
+        <a href="/createNote" id="create_">Create New Note</a>
+
+    </div>
+</body>
+</html>

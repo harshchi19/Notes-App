@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            color : #000033;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            gap: 20px;
+        }
+        h2 {
+            font-size: 50px;
+        }
+        h3 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 23px;
+            width: 50%;
+            text-align: center;
+        }
+        button {
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Note ID #<%= note.id %></h2>
+        <h3> <%= note.title %> </h3>
+        <p> <%= note.content %> </p>
+        <form action="/notes/<%= note.id %>/delete" method="POST">
+            <button type="submit">Delete Note</button>
+        </form>
+    </div>
+</body>
+</html>
